@@ -381,7 +381,7 @@ algokit project deploy testnet
 
 ## Built With
 
-This project was built during a 24-hour hackathon to demonstrate the feasibility of trustless prediction markets on Algorand. It leverages the [AlgoKit](https://developer.algorand.org/algokit/) fullstack development toolkit and the [Puya compiler](https://github.com/algorandfoundation/puya) for writing smart contracts in Python.
+This project was to demonstrate the feasibility of trustless prediction markets on Algorand. It leverages the [AlgoKit](https://developer.algorand.org/algokit/) fullstack development toolkit and the [Puya compiler](https://github.com/algorandfoundation/puya) for writing smart contracts in Python.
 
 ---
 
