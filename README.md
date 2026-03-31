@@ -15,6 +15,10 @@
 </p>
 
 <p align="center">
+  <a href="https://probex-nine.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-probex--nine.vercel.app-00e5b0?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" /></a>
+</p>
+
+<p align="center">
   <a href="#features">Features</a> &bull;
   <a href="#architecture">Architecture</a> &bull;
   <a href="#tech-stack">Tech Stack</a> &bull;
@@ -350,6 +354,12 @@ The contract is currently deployed on Algorand TestNet:
 
 - **App ID**: `758007912`
 - **Explorer**: [View on Lora](https://lora.algokit.io/testnet/application/758007912)
+
+### Frontend Deployment
+
+The frontend is live on Vercel:
+
+- **Live URL**: [https://probex-nine.vercel.app](https://probex-nine.vercel.app)
 
 ### Deploy Your Own Instance
 
