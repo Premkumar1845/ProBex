@@ -60,6 +60,7 @@ export default function AuthPage() {
                         email,
                         wallet_address: activeAddress ?? null,
                         created_at: new Date().toISOString(),
+                        last_sign_in_at: new Date().toISOString(),
                     })
                 }
 
@@ -69,6 +70,16 @@ export default function AuthPage() {
             } else {
                 const { error: signInErr } = await supabase.auth.signInWithPassword({ email, password })
                 if (signInErr) throw signInErr
+
+                // Update last_sign_in_at in users table
+                const { data: { user: signedInUser } } = await supabase.auth.getUser()
+                if (signedInUser) {
+                    await supabase.from('users').update({
+                        last_sign_in_at: new Date().toISOString(),
+                        wallet_address: activeAddress ?? null,
+                    }).eq('id', signedInUser.id)
+                }
+
                 navigate('/dashboard')
             }
         } catch (err: any) {
