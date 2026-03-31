@@ -1,0 +1,2537 @@
+{
+  "version": 3,
+  "sources": [
+    "../../probex_contract/contract.py"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2BQ;AAAkC;AAAlC;AACA;AAAiC;AAAjC;AACA;AAAmC;AAAnC;AACA;AAAmC;AAAnC;AALR;;AAAA;;;AAAA;;;;;;AAAA;;;AAAA;;;;AAAA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;;;;;;;;;;AAAA;;;AAAA;;;;;;AAAA;AAWK;AAAA;;AAAA;AAAA;;AAAA;AAAA;;AAAA;AAAA;AAAA;;;;;;;;;;;AApBJ;;;AAEM;;AAAW;;;;;AAAX;AAAP;;;AACe;AAAP;AACD;;AAAW;;;;AAAX;AAAP;AACe;AAAP;AAeH;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;;;AAAA;;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAEc;AAAA;AAAA;AAAA;AAAJ;AAAP;AACO;AAAA;;AAAoB;;AAApB;AAAP;AACO;AAAA;;AAAkB;;AAAlB;AAAP;AACO;;AAAA;AAAA;;AAAP;AAAA;AAEa;AAAA;;;AACiC;;AAAtB;AAAA;;AAAA;AAAA;;AACjB;AAAP;AAEgB;;AAAhB;;AAAA;;AAAA;AACiB;;AAAjB;;AAAA;;AAAA;AACa;;AAAb;;AAA2B;AAA3B;AAEiB;AAAd;AAAX;;;AACY;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAhBP;AAAA;AAkBO;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;;AAEP;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;;;AAEU;;AAAc;;AAAd;AAAP;AACW;AAAA;AAAA;AAAA;AAAJ;AAAP;AAEa;;;AACb;AAAA;AAAA;AACA;AAA6B;AAA7B;AAPH;AAAA;;;AAWU;AAAA;AAAA;AAAA;AAAP;AAE4C;;AAAtB;AAAA;;AAAA;AACtB;AAE6C;;AAAnB;AAAA;;AAAA;AAClC;;;AACmB;AAAA;AAAP;AAE0B;;AAAjB;AAAA;;AAAA;AAAA;AACQ;AAAA;AAAA;AAAA;AAAd;;AAAA;AAAP;AAEa;AAAA;AAAA;AAAA;AAA4B;AAAA;AAAA;AAAA;AAA5B;AAAA;;AACI;AAAd;AAAX;;;AAC2B;AAAA;AAAA;AAAA;AAGnB;AAAA;AAEU;;AAAA;;AAAA;AAAD;AAAA;AACI;;AAAb;;AAA2B;AAA3B;AAEA;AACa;;;;;;AADb;;;AAGQ;;;AAHR;AAxBH;AAAA;AAkBsB;AAAA;AAAA;AAAA;",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "algopy.arc4.ARC4Contract.approval_program",
+      "params": {},
+      "block": "main",
+      "stack_in": [],
+      "op": "intcblock 0 1 2"
+    },
+    "6": {
+      "op": "bytecblock \"total_yes_pool\" \"total_no_pool\" \"market_resolved\" \"winning_outcome\" \"bet_amount\" \"claimed\" \"bet_outcome\""
+    },
+    "100": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "102": {
+      "op": "bnz main_after_if_else@2",
+      "stack_out": []
+    },
+    "105": {
+      "op": "bytec_0 // \"total_yes_pool\"",
+      "defined_out": [
+        "\"total_yes_pool\""
+      ],
+      "stack_out": [
+        "\"total_yes_pool\""
+      ]
+    },
+    "106": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "\"total_yes_pool\"",
+        "0"
+      ],
+      "stack_out": [
+        "\"total_yes_pool\"",
+        "0"
+      ]
+    },
+    "107": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "108": {
+      "op": "bytec_1 // \"total_no_pool\"",
+      "defined_out": [
+        "\"total_no_pool\""
+      ],
+      "stack_out": [
+        "\"total_no_pool\""
+      ]
+    },
+    "109": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "\"total_no_pool\"",
+        "0"
+      ]
+    },
+    "110": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "111": {
+      "op": "bytec_2 // \"market_resolved\"",
+      "defined_out": [
+        "\"market_resolved\""
+      ],
+      "stack_out": [
+        "\"market_resolved\""
+      ]
+    },
+    "112": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "\"market_resolved\"",
+        "0"
+      ]
+    },
+    "113": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "114": {
+      "op": "bytec_3 // \"winning_outcome\"",
+      "defined_out": [
+        "\"winning_outcome\""
+      ],
+      "stack_out": [
+        "\"winning_outcome\""
+      ]
+    },
+    "115": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "\"winning_outcome\"",
+        "0"
+      ]
+    },
+    "116": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "117": {
+      "block": "main_after_if_else@2",
+      "stack_in": [],
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "119": {
+      "op": "bz main___algopy_default_create@13",
+      "stack_out": []
+    },
+    "122": {
+      "op": "pushbytes 0xd80f0fd5 // method \"bet(string,pay)void\"",
+      "defined_out": [
+        "Method(bet(string,pay)void)"
+      ],
+      "stack_out": [
+        "Method(bet(string,pay)void)"
+      ]
+    },
+    "128": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(bet(string,pay)void)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(bet(string,pay)void)",
+        "tmp%2#0"
+      ]
+    },
+    "131": {
+      "op": "match main_bet_route@5",
+      "stack_out": []
+    },
+    "135": {
+      "block": "main_switch_case_next@6",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%10#0"
+      ],
+      "stack_out": [
+        "tmp%10#0"
+      ]
+    },
+    "137": {
+      "op": "!",
+      "defined_out": [
+        "tmp%11#0"
+      ],
+      "stack_out": [
+        "tmp%11#0"
+      ]
+    },
+    "138": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "139": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%12#0"
+      ],
+      "stack_out": [
+        "tmp%12#0"
+      ]
+    },
+    "141": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "142": {
+      "op": "pushbytess 0x3875d1cf 0x488eb501 // method \"resolve_market(string)void\", method \"claim_winnings()void\"",
+      "defined_out": [
+        "Method(claim_winnings()void)",
+        "Method(resolve_market(string)void)"
+      ],
+      "stack_out": [
+        "Method(resolve_market(string)void)",
+        "Method(claim_winnings()void)"
+      ]
+    },
+    "154": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(claim_winnings()void)",
+        "Method(resolve_market(string)void)",
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "Method(resolve_market(string)void)",
+        "Method(claim_winnings()void)",
+        "tmp%14#0"
+      ]
+    },
+    "157": {
+      "op": "match resolve_market claim_winnings",
+      "stack_out": []
+    },
+    "163": {
+      "op": "err"
+    },
+    "164": {
+      "block": "main_bet_route@5",
+      "stack_in": [],
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "165": {
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "1",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "1",
+        "tmp%3#0"
+      ]
+    },
+    "167": {
+      "op": "shl",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "168": {
+      "op": "pushint 3",
+      "defined_out": [
+        "3",
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0",
+        "3"
+      ]
+    },
+    "170": {
+      "op": "&",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "171": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%5#0",
+        "tmp%7#0"
+      ]
+    },
+    "173": {
+      "op": "&&",
+      "defined_out": [
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%9#0"
+      ]
+    },
+    "174": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "175": {
+      "op": "b bet"
+    },
+    "178": {
+      "block": "main___algopy_default_create@13",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "tmp%15#0"
+      ]
+    },
+    "180": {
+      "op": "!",
+      "defined_out": [
+        "tmp%16#0"
+      ],
+      "stack_out": [
+        "tmp%16#0"
+      ]
+    },
+    "181": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%16#0",
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "tmp%16#0",
+        "tmp%17#0"
+      ]
+    },
+    "183": {
+      "op": "!",
+      "defined_out": [
+        "tmp%16#0",
+        "tmp%18#0"
+      ],
+      "stack_out": [
+        "tmp%16#0",
+        "tmp%18#0"
+      ]
+    },
+    "184": {
+      "op": "&&",
+      "defined_out": [
+        "tmp%19#0"
+      ],
+      "stack_out": [
+        "tmp%19#0"
+      ]
+    },
+    "185": {
+      "op": "return",
+      "defined_out": [],
+      "stack_out": []
+    },
+    "186": {
+      "subroutine": "smart_contracts.probex_contract.contract._parse_outcome",
+      "params": {
+        "outcome#0": "bytes"
+      },
+      "block": "_parse_outcome",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "189": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "outcome#0 (copy)"
+      ],
+      "stack_out": [
+        "outcome#0 (copy)"
+      ]
+    },
+    "191": {
+      "op": "pushbytes \"yes\"",
+      "defined_out": [
+        "\"yes\"",
+        "outcome#0 (copy)"
+      ],
+      "stack_out": [
+        "outcome#0 (copy)",
+        "\"yes\""
+      ]
+    },
+    "196": {
+      "op": "==",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "197": {
+      "op": "bz _parse_outcome_after_if_else@2",
+      "stack_out": []
+    },
+    "200": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "201": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "202": {
+      "block": "_parse_outcome_after_if_else@2",
+      "stack_in": [],
+      "op": "frame_dig -1",
+      "defined_out": [
+        "outcome#0 (copy)"
+      ],
+      "stack_out": [
+        "outcome#0 (copy)"
+      ]
+    },
+    "204": {
+      "op": "pushbytes \"no\"",
+      "defined_out": [
+        "\"no\"",
+        "outcome#0 (copy)"
+      ],
+      "stack_out": [
+        "outcome#0 (copy)",
+        "\"no\""
+      ]
+    },
+    "208": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "209": {
+      "error": "invalid outcome",
+      "op": "assert // invalid outcome",
+      "stack_out": []
+    },
+    "210": {
+      "op": "intc_2 // 2",
+      "defined_out": [
+        "2"
+      ],
+      "stack_out": [
+        "2"
+      ]
+    },
+    "211": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "212": {
+      "subroutine": "smart_contracts.probex_contract.contract.ProbexContract.bet[routing]",
+      "params": {},
+      "block": "bet",
+      "stack_in": [],
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "215": {
+      "op": "dup",
+      "defined_out": [
+        "tmp%0#0",
+        "tmp%0#0 (copy)"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%0#0 (copy)"
+      ]
+    },
+    "216": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0",
+        "tmp%0#0 (copy)"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%0#0 (copy)",
+        "0"
+      ]
+    },
+    "217": {
+      "error": "invalid array length header",
+      "op": "extract_uint16 // on error: invalid array length header",
+      "defined_out": [
+        "aggregate%array_length%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "aggregate%array_length%0#0"
+      ]
+    },
+    "218": {
+      "op": "intc_2 // 2",
+      "defined_out": [
+        "2",
+        "aggregate%array_length%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "aggregate%array_length%0#0",
+        "2"
+      ]
+    },
+    "219": {
+      "op": "+",
+      "defined_out": [
+        "add%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "add%0#0"
+      ]
+    },
+    "220": {
+      "op": "dig 1",
+      "stack_out": [
+        "tmp%0#0",
+        "add%0#0",
+        "tmp%0#0 (copy)"
+      ]
+    },
+    "222": {
+      "op": "len",
+      "defined_out": [
+        "add%0#0",
+        "len%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "add%0#0",
+        "len%0#0"
+      ]
+    },
+    "223": {
+      "op": "==",
+      "defined_out": [
+        "eq%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "eq%0#0"
+      ]
+    },
+    "224": {
+      "error": "invalid number of bytes for arc4.dynamic_array<arc4.uint8>",
+      "op": "assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>",
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "225": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "outcome#0"
+      ],
+      "stack_out": [
+        "outcome#0"
+      ]
+    },
+    "228": {
+      "op": "txn GroupIndex",
+      "defined_out": [
+        "outcome#0",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "tmp%2#0"
+      ]
+    },
+    "230": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1",
+        "outcome#0",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "tmp%2#0",
+        "1"
+      ]
+    },
+    "231": {
+      "op": "-",
+      "defined_out": [
+        "outcome#0",
+        "payment#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0"
+      ]
+    },
+    "232": {
+      "op": "dup",
+      "defined_out": [
+        "outcome#0",
+        "payment#0",
+        "payment#0 (copy)"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "payment#0 (copy)"
+      ]
+    },
+    "233": {
+      "op": "gtxns TypeEnum",
+      "defined_out": [
+        "gtxn_type%0#0",
+        "outcome#0",
+        "payment#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "gtxn_type%0#0"
+      ]
+    },
+    "235": {
+      "op": "intc_1 // pay",
+      "defined_out": [
+        "gtxn_type%0#0",
+        "outcome#0",
+        "pay",
+        "payment#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "gtxn_type%0#0",
+        "pay"
+      ]
+    },
+    "236": {
+      "op": "==",
+      "defined_out": [
+        "gtxn_type_matches%0#0",
+        "outcome#0",
+        "payment#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "gtxn_type_matches%0#0"
+      ]
+    },
+    "237": {
+      "error": "transaction type is pay",
+      "op": "assert // transaction type is pay",
+      "stack_out": [
+        "outcome#0",
+        "payment#0"
+      ]
+    },
+    "238": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "0"
+      ]
+    },
+    "239": {
+      "op": "bytec_2 // \"market_resolved\"",
+      "defined_out": [
+        "\"market_resolved\"",
+        "0",
+        "outcome#0",
+        "payment#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "0",
+        "\"market_resolved\""
+      ]
+    },
+    "240": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "outcome#0",
+        "payment#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "241": {
+      "error": "check self.market_resolved exists",
+      "op": "assert // check self.market_resolved exists",
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "242": {
+      "op": "!",
+      "defined_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%0#1"
+      ]
+    },
+    "243": {
+      "error": "market resolved",
+      "op": "assert // market resolved",
+      "stack_out": [
+        "outcome#0",
+        "payment#0"
+      ]
+    },
+    "244": {
+      "op": "dup",
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "payment#0 (copy)"
+      ]
+    },
+    "245": {
+      "op": "gtxns Receiver",
+      "defined_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%1#1"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%1#1"
+      ]
+    },
+    "247": {
+      "op": "global CurrentApplicationAddress",
+      "defined_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%1#1",
+        "tmp%2#1"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%1#1",
+        "tmp%2#1"
+      ]
+    },
+    "249": {
+      "op": "==",
+      "defined_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%3#0"
+      ]
+    },
+    "250": {
+      "error": "bad receiver",
+      "op": "assert // bad receiver",
+      "stack_out": [
+        "outcome#0",
+        "payment#0"
+      ]
+    },
+    "251": {
+      "op": "dup",
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "payment#0 (copy)"
+      ]
+    },
+    "252": {
+      "op": "gtxns Sender",
+      "defined_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%4#0"
+      ]
+    },
+    "254": {
+      "op": "txn Sender",
+      "defined_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%4#0",
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%4#0",
+        "tmp%5#0"
+      ]
+    },
+    "256": {
+      "op": "==",
+      "defined_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%6#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "payment#0",
+        "tmp%6#0"
+      ]
+    },
+    "257": {
+      "error": "bad sender",
+      "op": "assert // bad sender",
+      "stack_out": [
+        "outcome#0",
+        "payment#0"
+      ]
+    },
+    "258": {
+      "op": "gtxns Amount",
+      "defined_out": [
+        "outcome#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "outcome#0",
+        "tmp%7#0"
+      ]
+    },
+    "260": {
+      "op": "dup",
+      "stack_out": [
+        "outcome#0",
+        "tmp%7#0",
+        "tmp%7#0"
+      ]
+    },
+    "261": {
+      "op": "cover 2",
+      "defined_out": [
+        "outcome#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "outcome#0",
+        "tmp%7#0"
+      ]
+    },
+    "263": {
+      "op": "dup",
+      "defined_out": [
+        "outcome#0",
+        "tmp%7#0",
+        "tmp%7#0 (copy)"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "outcome#0",
+        "tmp%7#0",
+        "tmp%7#0 (copy)"
+      ]
+    },
+    "264": {
+      "error": "amount must be > 0",
+      "op": "assert // amount must be > 0",
+      "stack_out": [
+        "tmp%7#0",
+        "outcome#0",
+        "tmp%7#0"
+      ]
+    },
+    "265": {
+      "op": "swap",
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome#0"
+      ]
+    },
+    "266": {
+      "callsub": "smart_contracts.probex_contract.contract._parse_outcome",
+      "op": "callsub _parse_outcome",
+      "defined_out": [
+        "outcome_id#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome_id#0"
+      ]
+    },
+    "269": {
+      "op": "txn Sender",
+      "defined_out": [
+        "outcome_id#0",
+        "tmp%10#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%10#0"
+      ]
+    },
+    "271": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%10#0",
+        "0"
+      ]
+    },
+    "272": {
+      "op": "bytec 4 // \"bet_amount\"",
+      "defined_out": [
+        "\"bet_amount\"",
+        "0",
+        "outcome_id#0",
+        "tmp%10#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%10#0",
+        "0",
+        "\"bet_amount\""
+      ]
+    },
+    "274": {
+      "op": "app_local_get_ex",
+      "defined_out": [
+        "existing_bet#0",
+        "has_bet#0",
+        "outcome_id#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome_id#0",
+        "existing_bet#0",
+        "has_bet#0"
+      ]
+    },
+    "275": {
+      "op": "bury 1",
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome_id#0",
+        "has_bet#0"
+      ]
+    },
+    "277": {
+      "op": "!",
+      "defined_out": [
+        "outcome_id#0",
+        "tmp%11#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%11#0"
+      ]
+    },
+    "278": {
+      "error": "already bet",
+      "op": "assert // already bet",
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome_id#0"
+      ]
+    },
+    "279": {
+      "op": "txn Sender",
+      "defined_out": [
+        "outcome_id#0",
+        "tmp%13#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%13#0"
+      ]
+    },
+    "281": {
+      "op": "bytec 4 // \"bet_amount\"",
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%13#0",
+        "\"bet_amount\""
+      ]
+    },
+    "283": {
+      "op": "uncover 3",
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%13#0",
+        "\"bet_amount\"",
+        "tmp%7#0"
+      ]
+    },
+    "285": {
+      "op": "app_local_put",
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0"
+      ]
+    },
+    "286": {
+      "op": "txn Sender",
+      "defined_out": [
+        "outcome_id#0",
+        "tmp%14#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%14#0"
+      ]
+    },
+    "288": {
+      "op": "bytec 6 // \"bet_outcome\"",
+      "defined_out": [
+        "\"bet_outcome\"",
+        "outcome_id#0",
+        "tmp%14#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%14#0",
+        "\"bet_outcome\""
+      ]
+    },
+    "290": {
+      "op": "dig 2",
+      "defined_out": [
+        "\"bet_outcome\"",
+        "outcome_id#0",
+        "outcome_id#0 (copy)",
+        "tmp%14#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%14#0",
+        "\"bet_outcome\"",
+        "outcome_id#0 (copy)"
+      ]
+    },
+    "292": {
+      "op": "app_local_put",
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0"
+      ]
+    },
+    "293": {
+      "op": "txn Sender",
+      "defined_out": [
+        "outcome_id#0",
+        "tmp%15#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%15#0"
+      ]
+    },
+    "295": {
+      "op": "bytec 5 // \"claimed\"",
+      "defined_out": [
+        "\"claimed\"",
+        "outcome_id#0",
+        "tmp%15#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%15#0",
+        "\"claimed\""
+      ]
+    },
+    "297": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0",
+        "tmp%15#0",
+        "\"claimed\"",
+        "0"
+      ]
+    },
+    "298": {
+      "op": "app_local_put",
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0"
+      ]
+    },
+    "299": {
+      "op": "intc_1 // 1",
+      "stack_out": [
+        "tmp%7#0",
+        "outcome_id#0",
+        "1"
+      ]
+    },
+    "300": {
+      "op": "==",
+      "defined_out": [
+        "tmp%16#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%16#0"
+      ]
+    },
+    "301": {
+      "op": "bz bet_else_body@3",
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "304": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "tmp%7#0",
+        "0"
+      ]
+    },
+    "305": {
+      "op": "bytec_0 // \"total_yes_pool\"",
+      "defined_out": [
+        "\"total_yes_pool\"",
+        "0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "0",
+        "\"total_yes_pool\""
+      ]
+    },
+    "306": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "307": {
+      "error": "check self.total_yes_pool exists",
+      "op": "assert // check self.total_yes_pool exists",
+      "stack_out": [
+        "tmp%7#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "308": {
+      "op": "+",
+      "defined_out": [
+        "tmp%18#0"
+      ],
+      "stack_out": [
+        "tmp%18#0"
+      ]
+    },
+    "309": {
+      "op": "bytec_0 // \"total_yes_pool\"",
+      "stack_out": [
+        "tmp%18#0",
+        "\"total_yes_pool\""
+      ]
+    },
+    "310": {
+      "op": "swap",
+      "stack_out": [
+        "\"total_yes_pool\"",
+        "tmp%18#0"
+      ]
+    },
+    "311": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "312": {
+      "block": "bet_after_if_else@4",
+      "stack_in": [],
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "313": {
+      "op": "return",
+      "stack_out": []
+    },
+    "314": {
+      "block": "bet_else_body@3",
+      "stack_in": [
+        "tmp%7#0"
+      ],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "0"
+      ]
+    },
+    "315": {
+      "op": "bytec_1 // \"total_no_pool\"",
+      "defined_out": [
+        "\"total_no_pool\"",
+        "0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "0",
+        "\"total_no_pool\""
+      ]
+    },
+    "316": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%3#0",
+        "maybe_value%3#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "317": {
+      "error": "check self.total_no_pool exists",
+      "op": "assert // check self.total_no_pool exists",
+      "stack_out": [
+        "tmp%7#0",
+        "maybe_value%3#0"
+      ]
+    },
+    "318": {
+      "op": "+",
+      "defined_out": [
+        "tmp%20#0"
+      ],
+      "stack_out": [
+        "tmp%20#0"
+      ]
+    },
+    "319": {
+      "op": "bytec_1 // \"total_no_pool\"",
+      "stack_out": [
+        "tmp%20#0",
+        "\"total_no_pool\""
+      ]
+    },
+    "320": {
+      "op": "swap",
+      "stack_out": [
+        "\"total_no_pool\"",
+        "tmp%20#0"
+      ]
+    },
+    "321": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "322": {
+      "op": "b bet_after_if_else@4"
+    },
+    "325": {
+      "subroutine": "smart_contracts.probex_contract.contract.ProbexContract.resolve_market[routing]",
+      "params": {},
+      "block": "resolve_market",
+      "stack_in": [],
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "328": {
+      "op": "dup",
+      "defined_out": [
+        "tmp%0#0",
+        "tmp%0#0 (copy)"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%0#0 (copy)"
+      ]
+    },
+    "329": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0",
+        "tmp%0#0 (copy)"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%0#0 (copy)",
+        "0"
+      ]
+    },
+    "330": {
+      "error": "invalid array length header",
+      "op": "extract_uint16 // on error: invalid array length header",
+      "defined_out": [
+        "aggregate%array_length%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "aggregate%array_length%0#0"
+      ]
+    },
+    "331": {
+      "op": "intc_2 // 2",
+      "defined_out": [
+        "2",
+        "aggregate%array_length%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "aggregate%array_length%0#0",
+        "2"
+      ]
+    },
+    "332": {
+      "op": "+",
+      "defined_out": [
+        "add%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "add%0#0"
+      ]
+    },
+    "333": {
+      "op": "dig 1",
+      "stack_out": [
+        "tmp%0#0",
+        "add%0#0",
+        "tmp%0#0 (copy)"
+      ]
+    },
+    "335": {
+      "op": "len",
+      "defined_out": [
+        "add%0#0",
+        "len%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "add%0#0",
+        "len%0#0"
+      ]
+    },
+    "336": {
+      "op": "==",
+      "defined_out": [
+        "eq%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "eq%0#0"
+      ]
+    },
+    "337": {
+      "error": "invalid number of bytes for arc4.dynamic_array<arc4.uint8>",
+      "op": "assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>",
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "338": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "winning_outcome#0"
+      ],
+      "stack_out": [
+        "winning_outcome#0"
+      ]
+    },
+    "341": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#1",
+        "winning_outcome#0"
+      ],
+      "stack_out": [
+        "winning_outcome#0",
+        "tmp%0#1"
+      ]
+    },
+    "343": {
+      "op": "global CreatorAddress",
+      "defined_out": [
+        "tmp%0#1",
+        "tmp%1#1",
+        "winning_outcome#0"
+      ],
+      "stack_out": [
+        "winning_outcome#0",
+        "tmp%0#1",
+        "tmp%1#1"
+      ]
+    },
+    "345": {
+      "op": "==",
+      "defined_out": [
+        "tmp%2#0",
+        "winning_outcome#0"
+      ],
+      "stack_out": [
+        "winning_outcome#0",
+        "tmp%2#0"
+      ]
+    },
+    "346": {
+      "error": "only creator",
+      "op": "assert // only creator",
+      "stack_out": [
+        "winning_outcome#0"
+      ]
+    },
+    "347": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "winning_outcome#0",
+        "0"
+      ]
+    },
+    "348": {
+      "op": "bytec_2 // \"market_resolved\"",
+      "defined_out": [
+        "\"market_resolved\"",
+        "0",
+        "winning_outcome#0"
+      ],
+      "stack_out": [
+        "winning_outcome#0",
+        "0",
+        "\"market_resolved\""
+      ]
+    },
+    "349": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "winning_outcome#0"
+      ],
+      "stack_out": [
+        "winning_outcome#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "350": {
+      "error": "check self.market_resolved exists",
+      "op": "assert // check self.market_resolved exists",
+      "stack_out": [
+        "winning_outcome#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "351": {
+      "op": "!",
+      "defined_out": [
+        "tmp%3#0",
+        "winning_outcome#0"
+      ],
+      "stack_out": [
+        "winning_outcome#0",
+        "tmp%3#0"
+      ]
+    },
+    "352": {
+      "error": "already resolved",
+      "op": "assert // already resolved",
+      "stack_out": [
+        "winning_outcome#0"
+      ]
+    },
+    "353": {
+      "callsub": "smart_contracts.probex_contract.contract._parse_outcome",
+      "op": "callsub _parse_outcome",
+      "defined_out": [
+        "outcome_id#0"
+      ],
+      "stack_out": [
+        "outcome_id#0"
+      ]
+    },
+    "356": {
+      "op": "bytec_3 // \"winning_outcome\"",
+      "defined_out": [
+        "\"winning_outcome\"",
+        "outcome_id#0"
+      ],
+      "stack_out": [
+        "outcome_id#0",
+        "\"winning_outcome\""
+      ]
+    },
+    "357": {
+      "op": "swap",
+      "stack_out": [
+        "\"winning_outcome\"",
+        "outcome_id#0"
+      ]
+    },
+    "358": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "359": {
+      "op": "bytec_2 // \"market_resolved\"",
+      "stack_out": [
+        "\"market_resolved\""
+      ]
+    },
+    "360": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "\"market_resolved\"",
+        "1"
+      ],
+      "stack_out": [
+        "\"market_resolved\"",
+        "1"
+      ]
+    },
+    "361": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "362": {
+      "op": "intc_1 // 1",
+      "stack_out": [
+        "1"
+      ]
+    },
+    "363": {
+      "op": "return",
+      "stack_out": []
+    },
+    "364": {
+      "subroutine": "smart_contracts.probex_contract.contract.ProbexContract.claim_winnings[routing]",
+      "params": {},
+      "block": "claim_winnings",
+      "stack_in": [],
+      "op": "pushbytes \"\"",
+      "stack_out": [
+        "total_pool#0"
+      ]
+    },
+    "366": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "0"
+      ]
+    },
+    "367": {
+      "op": "bytec_2 // \"market_resolved\"",
+      "defined_out": [
+        "\"market_resolved\"",
+        "0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "0",
+        "\"market_resolved\""
+      ]
+    },
+    "368": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "369": {
+      "error": "check self.market_resolved exists",
+      "op": "assert // check self.market_resolved exists",
+      "stack_out": [
+        "total_pool#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "370": {
+      "error": "market not resolved",
+      "op": "assert // market not resolved",
+      "stack_out": [
+        "total_pool#0"
+      ]
+    },
+    "371": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "tmp%0#0"
+      ]
+    },
+    "373": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "total_pool#0",
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "374": {
+      "op": "bytec 4 // \"bet_amount\"",
+      "defined_out": [
+        "\"bet_amount\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "tmp%0#0",
+        "0",
+        "\"bet_amount\""
+      ]
+    },
+    "376": {
+      "op": "app_local_get_ex",
+      "defined_out": [
+        "bet_amount#0",
+        "has_bet#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "has_bet#0"
+      ]
+    },
+    "377": {
+      "error": "no bet",
+      "op": "assert // no bet",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0"
+      ]
+    },
+    "378": {
+      "op": "txn Sender",
+      "defined_out": [
+        "bet_amount#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "tmp%1#0"
+      ]
+    },
+    "380": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "tmp%1#0",
+        "0"
+      ]
+    },
+    "381": {
+      "op": "bytec 5 // \"claimed\"",
+      "defined_out": [
+        "\"claimed\"",
+        "0",
+        "bet_amount#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "tmp%1#0",
+        "0",
+        "\"claimed\""
+      ]
+    },
+    "383": {
+      "op": "app_local_get_ex",
+      "defined_out": [
+        "bet_amount#0",
+        "claimed#0",
+        "claimed_exists#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "claimed_exists#0"
+      ]
+    },
+    "384": {
+      "op": "bz claim_winnings_after_if_else@3",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0"
+      ]
+    },
+    "387": {
+      "op": "dup",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "claimed#0"
+      ]
+    },
+    "388": {
+      "op": "!",
+      "defined_out": [
+        "bet_amount#0",
+        "claimed#0",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "tmp%2#0"
+      ]
+    },
+    "389": {
+      "error": "already claimed",
+      "op": "assert // already claimed",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0"
+      ]
+    },
+    "390": {
+      "block": "claim_winnings_after_if_else@3",
+      "stack_in": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0"
+      ],
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "tmp%3#0"
+      ]
+    },
+    "392": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "tmp%3#0",
+        "0"
+      ]
+    },
+    "393": {
+      "op": "bytec 6 // \"bet_outcome\"",
+      "defined_out": [
+        "\"bet_outcome\"",
+        "0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "tmp%3#0",
+        "0",
+        "\"bet_outcome\""
+      ]
+    },
+    "395": {
+      "op": "app_local_get_ex",
+      "defined_out": [
+        "maybe_exists%3#0",
+        "outcome_id#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "396": {
+      "error": "check self.bet_outcome exists for account",
+      "op": "assert // check self.bet_outcome exists for account",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0"
+      ]
+    },
+    "397": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "0"
+      ]
+    },
+    "398": {
+      "op": "bytec_3 // \"winning_outcome\"",
+      "defined_out": [
+        "\"winning_outcome\"",
+        "0",
+        "outcome_id#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "0",
+        "\"winning_outcome\""
+      ]
+    },
+    "399": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%4#0",
+        "maybe_value%4#0",
+        "outcome_id#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "maybe_value%4#0",
+        "maybe_exists%4#0"
+      ]
+    },
+    "400": {
+      "error": "check self.winning_outcome exists",
+      "op": "assert // check self.winning_outcome exists",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "maybe_value%4#0"
+      ]
+    },
+    "401": {
+      "op": "dig 1",
+      "defined_out": [
+        "maybe_value%4#0",
+        "outcome_id#0",
+        "outcome_id#0 (copy)"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "maybe_value%4#0",
+        "outcome_id#0 (copy)"
+      ]
+    },
+    "403": {
+      "op": "==",
+      "defined_out": [
+        "outcome_id#0",
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "tmp%4#0"
+      ]
+    },
+    "404": {
+      "error": "not a winner",
+      "op": "assert // not a winner",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0"
+      ]
+    },
+    "405": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "0"
+      ]
+    },
+    "406": {
+      "op": "bytec_0 // \"total_yes_pool\"",
+      "defined_out": [
+        "\"total_yes_pool\"",
+        "0",
+        "outcome_id#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "0",
+        "\"total_yes_pool\""
+      ]
+    },
+    "407": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%5#0",
+        "maybe_value%5#0",
+        "outcome_id#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "maybe_value%5#0",
+        "maybe_exists%5#0"
+      ]
+    },
+    "408": {
+      "error": "check self.total_yes_pool exists",
+      "op": "assert // check self.total_yes_pool exists",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "maybe_value%5#0"
+      ]
+    },
+    "409": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "maybe_value%5#0",
+        "0"
+      ]
+    },
+    "410": {
+      "op": "bytec_1 // \"total_no_pool\"",
+      "defined_out": [
+        "\"total_no_pool\"",
+        "0",
+        "maybe_value%5#0",
+        "outcome_id#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "maybe_value%5#0",
+        "0",
+        "\"total_no_pool\""
+      ]
+    },
+    "411": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%6#0",
+        "maybe_value%5#0",
+        "maybe_value%6#0",
+        "outcome_id#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "maybe_value%5#0",
+        "maybe_value%6#0",
+        "maybe_exists%6#0"
+      ]
+    },
+    "412": {
+      "error": "check self.total_no_pool exists",
+      "op": "assert // check self.total_no_pool exists",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "maybe_value%5#0",
+        "maybe_value%6#0"
+      ]
+    },
+    "413": {
+      "op": "+",
+      "defined_out": [
+        "outcome_id#0",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "total_pool#0"
+      ]
+    },
+    "414": {
+      "op": "bury 4",
+      "defined_out": [
+        "outcome_id#0",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0"
+      ]
+    },
+    "416": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1",
+        "outcome_id#0",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "outcome_id#0",
+        "1"
+      ]
+    },
+    "417": {
+      "op": "==",
+      "defined_out": [
+        "tmp%6#0",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "tmp%6#0"
+      ]
+    },
+    "418": {
+      "op": "bz claim_winnings_else_body@5",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0"
+      ]
+    },
+    "421": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "0"
+      ]
+    },
+    "422": {
+      "op": "bytec_0 // \"total_yes_pool\"",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "0",
+        "\"total_yes_pool\""
+      ]
+    },
+    "423": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%7#0",
+        "total_pool#0",
+        "winning_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "winning_pool#0",
+        "maybe_exists%7#0"
+      ]
+    },
+    "424": {
+      "error": "check self.total_yes_pool exists",
+      "op": "assert // check self.total_yes_pool exists",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "winning_pool#0"
+      ]
+    },
+    "425": {
+      "block": "claim_winnings_after_if_else@6",
+      "stack_in": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "winning_pool#0"
+      ],
+      "op": "dup",
+      "defined_out": [
+        "winning_pool#0",
+        "winning_pool#0 (copy)"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "winning_pool#0",
+        "winning_pool#0 (copy)"
+      ]
+    },
+    "426": {
+      "error": "empty winning pool",
+      "op": "assert // empty winning pool",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "winning_pool#0"
+      ]
+    },
+    "427": {
+      "op": "dig 2",
+      "defined_out": [
+        "bet_amount#0",
+        "winning_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "winning_pool#0",
+        "bet_amount#0"
+      ]
+    },
+    "429": {
+      "op": "dig 4",
+      "defined_out": [
+        "bet_amount#0",
+        "total_pool#0",
+        "winning_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "winning_pool#0",
+        "bet_amount#0",
+        "total_pool#0"
+      ]
+    },
+    "431": {
+      "op": "*",
+      "defined_out": [
+        "bet_amount#0",
+        "tmp%8#0",
+        "total_pool#0",
+        "winning_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "winning_pool#0",
+        "tmp%8#0"
+      ]
+    },
+    "432": {
+      "op": "swap",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "tmp%8#0",
+        "winning_pool#0"
+      ]
+    },
+    "433": {
+      "op": "/",
+      "defined_out": [
+        "bet_amount#0",
+        "payout#0",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "payout#0"
+      ]
+    },
+    "434": {
+      "op": "txn Sender",
+      "defined_out": [
+        "bet_amount#0",
+        "payout#0",
+        "tmp%10#0",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "payout#0",
+        "tmp%10#0"
+      ]
+    },
+    "436": {
+      "op": "bytec 5 // \"claimed\"",
+      "defined_out": [
+        "\"claimed\"",
+        "bet_amount#0",
+        "payout#0",
+        "tmp%10#0",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "payout#0",
+        "tmp%10#0",
+        "\"claimed\""
+      ]
+    },
+    "438": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "\"claimed\"",
+        "1",
+        "bet_amount#0",
+        "payout#0",
+        "tmp%10#0",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "payout#0",
+        "tmp%10#0",
+        "\"claimed\"",
+        "1"
+      ]
+    },
+    "439": {
+      "op": "app_local_put",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "payout#0"
+      ]
+    },
+    "440": {
+      "op": "itxn_begin"
+    },
+    "441": {
+      "op": "txn Sender",
+      "defined_out": [
+        "bet_amount#0",
+        "inner_txn_params%0%%param_Receiver_idx_0#0",
+        "payout#0",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "payout#0",
+        "inner_txn_params%0%%param_Receiver_idx_0#0"
+      ]
+    },
+    "443": {
+      "op": "itxn_field Receiver"
+    },
+    "445": {
+      "op": "itxn_field Amount",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0"
+      ]
+    },
+    "447": {
+      "op": "intc_1 // pay",
+      "defined_out": [
+        "bet_amount#0",
+        "pay",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "pay"
+      ]
+    },
+    "448": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0"
+      ]
+    },
+    "450": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "bet_amount#0",
+        "total_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "0"
+      ]
+    },
+    "451": {
+      "op": "itxn_field Fee",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0"
+      ]
+    },
+    "453": {
+      "op": "itxn_submit"
+    },
+    "454": {
+      "op": "intc_1 // 1",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "1"
+      ]
+    },
+    "455": {
+      "op": "return",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0"
+      ]
+    },
+    "456": {
+      "block": "claim_winnings_else_body@5",
+      "stack_in": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0"
+      ],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "0"
+      ]
+    },
+    "457": {
+      "op": "bytec_1 // \"total_no_pool\"",
+      "defined_out": [
+        "\"total_no_pool\"",
+        "0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "0",
+        "\"total_no_pool\""
+      ]
+    },
+    "458": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%8#0",
+        "winning_pool#0"
+      ],
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "winning_pool#0",
+        "maybe_exists%8#0"
+      ]
+    },
+    "459": {
+      "error": "check self.total_no_pool exists",
+      "op": "assert // check self.total_no_pool exists",
+      "stack_out": [
+        "total_pool#0",
+        "bet_amount#0",
+        "claimed#0",
+        "winning_pool#0"
+      ]
+    },
+    "460": {
+      "op": "b claim_winnings_after_if_else@6"
+    }
+  }
+}
