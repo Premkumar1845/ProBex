@@ -15,36 +15,11 @@ export default function DashboardPage() {
     const navigate = useNavigate()
     const { user, loading: authLoading } = useAuth()
     const { activeAddress, wallets } = useWallet()
-    const [activeTab, setActiveTab] = useState<'contract' | 'markets' | 'admin'>('contract')
+    const [activeTab, setActiveTab] = useState<'contract' | 'markets'>('contract')
     const [theme, setTheme] = useState<'dark' | 'light'>('dark')
     const [walletModalOpen, setWalletModalOpen] = useState(false)
     const [filterCat, setFilterCat] = useState<string>('All')
     const [selectedAnalyticsMarket, setSelectedAnalyticsMarket] = useState<PredictionMarket | null>(null)
-
-    // Admin: registered users
-    interface RegisteredUser {
-        id: string
-        email: string
-        wallet_address: string | null
-        created_at: string
-        last_sign_in_at?: string | null
-    }
-    const [users, setUsers] = useState<RegisteredUser[]>([])
-    const [usersLoading, setUsersLoading] = useState(false)
-
-    // Fetch users when admin tab is selected
-    useEffect(() => {
-        if (activeTab !== 'admin') return
-        setUsersLoading(true)
-        supabase
-            .from('users')
-            .select('*')
-            .order('created_at', { ascending: false })
-            .then(({ data, error }) => {
-                if (!error && data) setUsers(data as RegisteredUser[])
-                setUsersLoading(false)
-            })
-    }, [activeTab])
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme)
@@ -195,7 +170,6 @@ export default function DashboardPage() {
                     {[
                         { id: 'contract', label: '🔗 Live Contract' },
                         { id: 'markets', label: '📊 All Markets + Analytics' },
-                        { id: 'admin', label: '👥 Users' },
                     ].map((tab) => (
                         <motion.button
                             key={tab.id}
@@ -272,97 +246,6 @@ export default function DashboardPage() {
                             >
                                 ↑ Select a market above to view detailed analytics
                             </motion.div>
-                        )}
-                    </motion.div>
-                )}
-
-                {activeTab === 'admin' && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <div style={{ fontFamily: 'var(--fm)', fontSize: 10, color: 'var(--txt3)', letterSpacing: 1, marginBottom: 16 }}>
-                            REGISTERED USERS — {users.length} TOTAL
-                        </div>
-
-                        {usersLoading ? (
-                            <div style={{ textAlign: 'center', padding: '40px 0', fontFamily: 'var(--fm)', fontSize: 12, color: 'var(--txt3)' }}>
-                                Loading users...
-                            </div>
-                        ) : users.length === 0 ? (
-                            <div style={{
-                                textAlign: 'center', padding: '40px 0',
-                                fontFamily: 'var(--fm)', fontSize: 12, color: 'var(--txt3)',
-                            }}>
-                                No registered users yet.
-                            </div>
-                        ) : (
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                                {users.map((u, i) => (
-                                    <motion.div
-                                        key={u.id}
-                                        initial={{ opacity: 0, y: 8 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: i * 0.04, duration: 0.25 }}
-                                        style={{
-                                            background: 'var(--c1)',
-                                            border: '1px solid var(--border2)',
-                                            borderRadius: 12,
-                                            padding: '16px 20px',
-                                            display: 'grid',
-                                            gridTemplateColumns: '1fr',
-                                            gap: 10,
-                                        }}
-                                    >
-                                        {/* Row 1: index + email */}
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
-                                            <span style={{
-                                                fontFamily: 'var(--fm)', fontSize: 10, fontWeight: 700,
-                                                color: '#000', background: 'var(--g)',
-                                                borderRadius: 6, padding: '3px 8px', minWidth: 28, textAlign: 'center',
-                                            }}>
-                                                #{i + 1}
-                                            </span>
-                                            <span style={{ fontFamily: 'var(--fm)', fontSize: 13, color: 'var(--txt)', fontWeight: 700 }}>
-                                                {u.email}
-                                            </span>
-                                        </div>
-
-                                        {/* Row 2: wallet + timestamps */}
-                                        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
-                                            {u.wallet_address ? (
-                                                <span style={{
-                                                    fontFamily: 'var(--fm)', fontSize: 10, color: 'var(--g)',
-                                                    background: 'rgba(0,229,176,.08)', border: '1px solid var(--border)',
-                                                    borderRadius: 6, padding: '4px 10px',
-                                                    maxWidth: '100%', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                                                }}>
-                                                    {u.wallet_address.slice(0, 8)}…{u.wallet_address.slice(-6)}
-                                                </span>
-                                            ) : (
-                                                <span style={{
-                                                    fontFamily: 'var(--fm)', fontSize: 10, color: 'var(--txt3)',
-                                                    background: 'rgba(255,255,255,.03)', border: '1px solid var(--border2)',
-                                                    borderRadius: 6, padding: '4px 10px',
-                                                }}>
-                                                    No wallet linked
-                                                </span>
-                                            )}
-
-                                            <span style={{ fontFamily: 'var(--fm)', fontSize: 10, color: 'var(--txt3)' }}>
-                                                Joined: {new Date(u.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                                            </span>
-
-                                            {u.last_sign_in_at && (
-                                                <span style={{ fontFamily: 'var(--fm)', fontSize: 10, color: 'var(--txt2)' }}>
-                                                    Last login: {new Date(u.last_sign_in_at).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
-                                                </span>
-                                            )}
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
                         )}
                     </motion.div>
                 )}

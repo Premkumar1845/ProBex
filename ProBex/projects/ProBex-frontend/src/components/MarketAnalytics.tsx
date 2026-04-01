@@ -3,7 +3,6 @@ import {
     XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid,
 } from 'recharts'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
