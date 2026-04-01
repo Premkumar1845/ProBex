@@ -162,6 +162,7 @@ export default function Home({ showNav = true }: { showNav?: boolean } = {}) {
   const [resolveLoading, setResolveLoading] = useState(false)
   const [claimLoading, setClaimLoading] = useState(false)
   const [cancelLoading, setCancelLoading] = useState(false)
+  const [autoClaimAttempted, setAutoClaimAttempted] = useState(false)
   const [toasts, setToasts] = useState<{ id: number; msg: string; type: string }[]>([])
   const [logs, setLogs] = useState<LogEntry[]>([])
   const [lastTxId, setLastTxId] = useState<string | null>(null)
@@ -419,6 +420,37 @@ export default function Home({ showNav = true }: { showNav?: boolean } = {}) {
   // canBet: wallet connected + market open + not currently loading + user hasn't already bet
   const canBet = !!activeAddress && !displayResolved && !betLoading && displayUserBet === null
 
+  // Calculate estimated payout for current user if they won
+  const userPayoutEstimate = (() => {
+    if (!displayUserBet || !market.marketResolved || displayUserBet.claimed) return null
+    const userOutcome = displayUserBet.outcome
+    if (userOutcome !== market.winningOutcome) return null // not a winner
+    const total = Number(market.totalYesPool) + Number(market.totalNoPool)
+    const winPool = userOutcome === 1 ? Number(market.totalYesPool) : Number(market.totalNoPool)
+    if (winPool === 0) return null
+    const payoutMicro = (Number(displayUserBet.amount) * total) / winPool
+    return payoutMicro / 1_000_000
+  })()
+
+  // Auto-claim: when market is resolved, user is a winner, and hasn't claimed yet
+  useEffect(() => {
+    if (
+      isRealMarket &&
+      market.marketResolved &&
+      userBet &&
+      !userBet.claimed &&
+      userBet.outcome === market.winningOutcome &&
+      activeAddress &&
+      !claimLoading &&
+      !autoClaimAttempted
+    ) {
+      setAutoClaimAttempted(true)
+      showToast('You won! Auto-claiming your winnings...', 'info')
+      // Small delay so the user sees the notification before the wallet popup
+      setTimeout(() => claimWinnings(), 1500)
+    }
+  }, [market.marketResolved, userBet, activeAddress, isRealMarket, autoClaimAttempted])
+
   // ─── Render ─────────────────────────────────────
   return (
     <>
@@ -527,13 +559,32 @@ export default function Home({ showNav = true }: { showNav?: boolean } = {}) {
             <div className="rb-msg">
               {market.winningOutcome === 1 ? 'YES wins!' : 'NO wins!'} The market has been settled.
             </div>
-            {displayUserBet && !displayUserBet.claimed && (
-              <button className="claim-btn" onClick={claimWinnings} disabled={claimLoading}>
-                {claimLoading ? 'Claiming…' : 'Claim my winnings'}
+            {displayUserBet && !displayUserBet.claimed && displayUserBet.outcome === market.winningOutcome && userPayoutEstimate && (
+              <div style={{ margin: '12px 0', padding: '14px 18px', background: 'rgba(0,229,176,.08)', border: '1px solid rgba(0,229,176,.3)', borderRadius: 12, textAlign: 'center' }}>
+                <div style={{ fontFamily: 'var(--fm)', fontSize: 10, color: 'var(--g)', letterSpacing: 1, marginBottom: 6 }}>YOUR WINNINGS</div>
+                <div style={{ fontFamily: 'var(--fm)', fontSize: 28, fontWeight: 700, color: 'var(--g)' }}>{userPayoutEstimate.toFixed(4)} ALGO</div>
+                <div style={{ fontFamily: 'var(--fm)', fontSize: 10, color: 'var(--txt3)', marginTop: 4 }}>
+                  Staked {fmtAlgo(displayUserBet.amount)} on {displayUserBet.outcome === 1 ? 'YES' : 'NO'} · Proportional payout from combined pool
+                </div>
+              </div>
+            )}
+            {displayUserBet && !displayUserBet.claimed && displayUserBet.outcome !== market.winningOutcome && (
+              <div style={{ margin: '12px 0', padding: '10px 16px', background: 'rgba(255,79,139,.06)', border: '1px solid rgba(255,79,139,.2)', borderRadius: 10, textAlign: 'center', fontFamily: 'var(--fm)', fontSize: 12, color: 'var(--pink)' }}>
+                Your bet on {displayUserBet.outcome === 1 ? 'YES' : 'NO'} did not win this time.
+              </div>
+            )}
+            {displayUserBet && !displayUserBet.claimed && displayUserBet.outcome === market.winningOutcome && (
+              <button className="claim-btn" onClick={claimWinnings} disabled={claimLoading} style={{ marginTop: 8 }}>
+                {claimLoading ? 'Claiming…' : `Claim ${userPayoutEstimate ? userPayoutEstimate.toFixed(4) + ' ALGO' : 'my winnings'}`}
               </button>
             )}
             {displayUserBet?.claimed && (
-              <span style={{ fontFamily: 'var(--fm)', fontSize: 12, color: 'var(--g)' }}>✓ Winnings claimed</span>
+              <div style={{ margin: '10px 0', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+                <span style={{ fontFamily: 'var(--fm)', fontSize: 13, color: 'var(--g)', fontWeight: 700 }}>✓ Winnings claimed successfully</span>
+                {lastTxId && (
+                  <a href={`${LORA_BASE}/transaction/${lastTxId}`} target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--fm)', fontSize: 10, color: 'var(--g)', textDecoration: 'underline' }}>View tx</a>
+                )}
+              </div>
             )}
           </div>
         )}
