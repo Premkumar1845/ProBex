@@ -8,7 +8,6 @@
 </p>
 
 <h1 align="center">ProBex</h1>
-<h1 align="center">Prediction Markets on Algorand</h1>
 
 <p align="center">
   <strong>Trustless parimutuel prediction markets built entirely on Algorand.</strong><br/>
