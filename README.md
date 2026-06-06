@@ -14,23 +14,6 @@
   Bet on real-world outcomes. Get paid in ALGO. No intermediaries.
 </p>
 
-<p align="center">
-  <a href="https://probex-nine.vercel.app"><img src="https://img.shields.io/badge/Live%20Demo-probex--nine.vercel.app-00e5b0?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" /></a>
-</p>
-
-<p align="center">
-  <a href="#features">Features</a> &bull;
-  <a href="#architecture">Architecture</a> &bull;
-  <a href="#tech-stack">Tech Stack</a> &bull;
-  <a href="#project-structure">Project Structure</a> &bull;
-  <a href="#getting-started">Getting Started</a> &bull;
-  <a href="#smart-contract">Smart Contract</a> &bull;
-  <a href="#frontend">Frontend</a> &bull;
-  <a href="#deployment">Deployment</a> &bull;
-  <a href="#testing">Testing</a> &bull;
-  <a href="#license">License</a>
-</p>
-
 ---
 
 ## Overview
