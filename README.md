@@ -7,7 +7,8 @@
   <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
 </p>
 
-<h1 align="center">ProBex - Prediction Markets on Algorand</h1>
+<h1 align="center">ProBex</h1>
+<h1 align="center">Prediction Markets on Algorand</h1>
 
 <p align="center">
   <strong>Trustless parimutuel prediction markets built entirely on Algorand.</strong><br/>
