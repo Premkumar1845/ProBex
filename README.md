@@ -1,3 +1,12 @@
+
+
+<h1 align="center">ProBex</h1>
+
+<p align="center">
+  <strong>Trustless parimutuel prediction markets built entirely on Algorand.</strong><br/>
+  Bet on real-world outcomes. Get paid in ALGO. No intermediaries.
+</p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Algorand-000000?style=for-the-badge&logo=algorand&logoColor=white" alt="Algorand" />
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
@@ -5,13 +14,6 @@
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
   <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
-</p>
-
-<h1 align="center">ProBex</h1>
-
-<p align="center">
-  <strong>Trustless parimutuel prediction markets built entirely on Algorand.</strong><br/>
-  Bet on real-world outcomes. Get paid in ALGO. No intermediaries.
 </p>
 
 ---
